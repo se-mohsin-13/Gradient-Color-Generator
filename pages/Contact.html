@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient - Contact</title>
+    <link rel="stylesheet" href="../stylesheets/styles.css" />
+    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init("service_1v1t1mj"); // 🔁 Replace with your actual USER ID
+
+        const form = document.querySelector(".contact-form");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = {
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value,
+          };
+
+          emailjs.send("service_1v1t1mj", "template_bzdj7pa", formData).then(
+            function (response) {
+              alert("Email sent successfully!");
+              form.reset(); // Clear the form
+            },
+            function (error) {
+              alert("Failed to send email. Please try again.");
+              console.error("EmailJS Error:", error);
+            }
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../index.html"><h3>Gradient</h3></a>
+      </div>
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="../index.html">Gradients</a></li>
+          <li><a href="./About.html">About</a></li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="contact-section" id="contact">
+      <h2>Contact</h2>
+      <p>Feel free to reach out for collaborations, questions, or feedback!</p>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>

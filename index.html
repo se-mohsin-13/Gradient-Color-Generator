@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Generator</title>
+    <link rel="stylesheet" href="./stylesheets/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/"><h3>Gradient</h3></a>
+      </div>
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="/">Gradients</a></li>
+          <li><a href="./pages/About.html">About</a></li>
+          <li><a href="./pages/Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h2>Generate a CSS Gradient</h2>
+
+      <div class="orientation">
+        <h4>Choose Orientation</h4>
+        <div class="btns-group" id="orientation-buttons">
+          <button data-direction="to top left">Top Left</button>
+          <button data-direction="to top">Top</button>
+          <button data-direction="to top right">Top Right</button>
+          <button data-direction="to left">Left</button>
+          <button data-direction="radial">Radial</button>
+          <button data-direction="to right">Right</button>
+          <button data-direction="to bottom left">Bottom Left</button>
+          <button data-direction="to bottom">Bottom</button>
+          <button data-direction="to bottom right">Bottom Right</button>
+        </div>
+      </div>
+
+      <div class="colorsContainer">
+        <button id="generate">Generate Gradient</button>
+        <p>Click below to copy the code</p>
+        <div class="colorPropertyContainer" id="gradient-output">
+          background: linear-gradient(to right, #000000, #ffffff);
+        </div>
+      </div>
+    </div>
+
+    <script src="./scripts/script.js"></script>
+   
+    </script>
+  </body>
+</html>
